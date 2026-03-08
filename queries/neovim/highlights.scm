@@ -10,17 +10,11 @@
 
 (close_brace) @punctuation.bracket
 
-(fat_arrow) @operator
-
 (semicolon) @punctuation.delimiter
 
 (equals) @punctuation.delimiter
 
 (string_line) @string
-
-(open_comment) @operator
-
-(close_comment) @operator
 
 (continue_) @keyword.conditional
 

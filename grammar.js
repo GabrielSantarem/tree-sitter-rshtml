@@ -20,7 +20,7 @@ const OPEN_PAREN = "(";
 const CLOSE_PAREN = ")";
 const OPEN_BRACKET = "[";
 const CLOSE_BRACKET = "]";
-const FAT_ARROW = "=>";
+// const FAT_ARROW = "=>";
 const COMMA = ",";
 const COLON = ":";
 const SEMICOLON = ";";
@@ -59,7 +59,7 @@ module.exports = grammar({
     open_bracket: (_) => token(OPEN_BRACKET),
     close_bracket: (_) => token(CLOSE_BRACKET),
     comma: (_) => token(COMMA),
-    fat_arrow: (_) => token(FAT_ARROW),
+    // fat_arrow: (_) => token(FAT_ARROW),
     colon: (_) => token(COLON),
     semicolon: (_) => token(SEMICOLON),
     equals: (_) => token(EQUALS),

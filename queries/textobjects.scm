@@ -1,7 +1,4 @@
-(section_block body: (_)? @entry.inside) @entry.around
-
 (rust_block content: (rust_text)? @entry.inside) @entry.around
-
 
 (if_stmt body: (_)? @entry.inside) @entry.around
 

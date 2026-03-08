@@ -139,13 +139,6 @@
         "value": ","
       }
     },
-    "fat_arrow": {
-      "type": "TOKEN",
-      "content": {
-        "type": "STRING",
-        "value": "=>"
-      }
-    },
     "colon": {
       "type": "TOKEN",
       "content": {
