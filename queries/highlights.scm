@@ -1,3 +1,4 @@
+(comment) @comment
 (start_symbol) @keyword
 (hash_symbol) @punctuation.special
 
@@ -40,7 +41,7 @@
   name_close: (component_tag_identifier) @tag)
 
 (component_tag_parameter
-  name: (rust_identifier) @variable.parameter)
+  name: (attribute_identifier) @variable.parameter)
 
 (
   (start_symbol) @function.call

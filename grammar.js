@@ -29,6 +29,7 @@ const EQUALS = "=";
 const STMT_HEAD_COND = /\s*[^@{}\s][^@{}]*/;
 const ASCII_DIGITS = /[0-9]+/;
 const COMPONENT_TAG_IDENTIFIER = /[A-Z][a-zA-Z0-9]*/;
+const ATTRIBUTE_IDENTIFIER = /[a-zA-Z_][a-zA-Z0-9_-]*/;
 // endregion
 
 module.exports = grammar({
@@ -101,6 +102,8 @@ module.exports = grammar({
     tag_end_open: (_) => token(prec(-1, "</")),
 
     component_tag_identifier: (_) => token(COMPONENT_TAG_IDENTIFIER),
+    attribute_identifier: (_) => token(ATTRIBUTE_IDENTIFIER),
+    comment: (_) => token(seq("@*", repeat(choice(/[^*]/, /\*+[^@*]/)), "*@")),
 
     // region errors
     if_error: (_) => token(prec(5, seq("if", /\s*/, "{"))),
@@ -157,6 +160,7 @@ module.exports = grammar({
 
     _block: ($) =>
       choice(
+        $.comment,
         $.component_tag,
         seq(
           $.start_symbol,
@@ -341,7 +345,7 @@ module.exports = grammar({
 
     component_tag_parameter: ($) =>
       seq(
-        field("name", $.rust_identifier),
+        field("name", $.attribute_identifier),
         optional(
           seq(
             $.equals,

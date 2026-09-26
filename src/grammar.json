@@ -366,6 +366,45 @@
         "value": "[A-Z][a-zA-Z0-9]*"
       }
     },
+    "attribute_identifier": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[a-zA-Z_][a-zA-Z0-9_-]*"
+      }
+    },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "@*"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PATTERN",
+                  "value": "[^*]"
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "\\*+[^@*]"
+                }
+              ]
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "*@"
+          }
+        ]
+      }
+    },
     "if_error": {
       "type": "TOKEN",
       "content": {
@@ -778,6 +817,10 @@
     "_block": {
       "type": "CHOICE",
       "members": [
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
         {
           "type": "SYMBOL",
           "name": "component_tag"
@@ -1710,7 +1753,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "rust_identifier"
+            "name": "attribute_identifier"
           }
         },
         {

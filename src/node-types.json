@@ -141,6 +141,10 @@
           "named": true
         },
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "component_tag",
           "named": true
         },
@@ -208,6 +212,10 @@
             "named": true
           },
           {
+            "type": "comment",
+            "named": true
+          },
+          {
             "type": "component_tag",
             "named": true
           },
@@ -258,7 +266,7 @@
         "required": true,
         "types": [
           {
-            "type": "rust_identifier",
+            "type": "attribute_identifier",
             "named": true
           }
         ]
@@ -325,6 +333,10 @@
           },
           {
             "type": "child_content_directive",
+            "named": true
+          },
+          {
+            "type": "comment",
             "named": true
           },
           {
@@ -424,6 +436,10 @@
             "named": true
           },
           {
+            "type": "comment",
+            "named": true
+          },
+          {
             "type": "component_tag",
             "named": true
           },
@@ -518,6 +534,10 @@
           },
           {
             "type": "child_content_directive",
+            "named": true
+          },
+          {
+            "type": "comment",
             "named": true
           },
           {
@@ -725,11 +745,6 @@
     }
   },
   {
-    "type": "rust_identifier",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "rust_text",
     "named": true,
     "fields": {}
@@ -753,6 +768,10 @@
         },
         {
           "type": "child_content_directive",
+          "named": true
+        },
+        {
+          "type": "comment",
           "named": true
         },
         {
@@ -906,6 +925,10 @@
             "named": true
           },
           {
+            "type": "comment",
+            "named": true
+          },
+          {
             "type": "component_tag",
             "named": true
           },
@@ -1046,6 +1069,10 @@
     "named": true
   },
   {
+    "type": "attribute_identifier",
+    "named": true
+  },
+  {
     "type": "bool",
     "named": true
   },
@@ -1063,6 +1090,10 @@
   },
   {
     "type": "comma",
+    "named": true
+  },
+  {
+    "type": "comment",
     "named": true
   },
   {
